@@ -13,11 +13,11 @@ int main()
     int n(6),m(4);
     float e(4);
     cout << "Entrez les dimensions de la matrice : " << endl;
-    cout << "Nombre de ligne";
+    cout << "Nombre de ligne: ";
     cin >> n;
-    cout << "Nombre de colonne";
+    cout << "Nombre de colonne: ";
     cin >> m;
-    cout << "Espace entre les capteurs";
+    cout << "Espace entre les capteurs: ";
     cin >> e;
 
     string const out1("../net/fingertip_layout.pos");
@@ -31,7 +31,6 @@ int main()
 
     if(Fingertip && Net && psoma_mr)
     {
-
         Fingertip << "###############################" << endl
                 << "#	PSoma - Fingertip - Layout File" << endl
                 << "#" << endl
@@ -63,8 +62,6 @@ int main()
 
         int l1(0),l2(0),im(0),jm(0);
 
-
-
         for(im=0;im<n;im++)
         {
             for(jm=0;jm<m;jm++)
@@ -79,7 +76,7 @@ int main()
             Net << "    " << i << "    " << i << "    "
                 << 1 << "    " << 0 << endl;
         }
-    psoma_mr << "###############################" << endl
+psoma_mr << "###############################" << endl
 <<"# Sensor Parameters" << endl
 <<"###############################" << endl
 <<"nb_sensors	" << n*m << "	# number of sensors (ie. Merkel Cells) per mechanoreceptor" << endl
@@ -112,7 +109,7 @@ cout << "Config crée" << endl;
         cout << endl;
     }
     system("pause");
-    cout << system("psoma.exe") <<endl;
+    cout << system("psoma.exe") << endl;
     system("pause");
     return 0;
 }
