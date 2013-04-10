@@ -38,7 +38,7 @@ int main()
                 << "###############################" << endl
                 << "# Array Dimensions" << endl
                 << "###############################" << endl
-                << n*m << " 4" << endl
+                << (n)*(m) << " 4" << endl
                 << "# lines = one line per sensor" << endl
                 << "# columns = sensor index, X pos (mm), Y pos (mm), Z pos (mm)" << endl << endl
                 << "###############################" << endl
@@ -53,25 +53,24 @@ int main()
                 << "###############################" << endl
                 << "# Array Dimensions" << endl
                 << "###############################" << endl
-                << n*m << " 4" << endl
+                << (n)*(m) << " 4" << endl
                 << "# lines = one line per sensor" << endl
                 << "# columns = sensor index, mechanoreceptor index, connection weight (0..1), connection delay (ms)" << endl << endl
                 << "###############################" << endl
                 << "#            Array            #" << endl
                 << "###############################" << endl;
 
-        int l1(0),l2(0),im(0),jm(0);
+        int l1(0),im(0),jm(0);
 
-        for(im=0;im<n;im++)
+        for(jm=0;jm<n;jm++)
         {
-            for(jm=0;jm<m;jm++)
+            for(im=0;im<m;im++)
             {
                 Fingertip << "    " << l1 << "    " << jm*e << "    " << im*(-1)*e << "    " << 0 << endl;
                 l1++;
-                l2++;
             }
         }
-        for(int i=0;i<n*m;i++)
+        for(int i=0;i<(n)*(m);i++)
         {
             Net << "    " << i << "    " << i << "    "
                 << 1 << "    " << 0 << endl;
@@ -79,7 +78,7 @@ int main()
 psoma_mr << "###############################" << endl
 <<"# Sensor Parameters" << endl
 <<"###############################" << endl
-<<"nb_sensors	" << n*m << "	# number of sensors (ie. Merkel Cells) per mechanoreceptor" << endl
+<<"nb_sensors	" << (n)*(m) << "	# number of sensors (ie. Merkel Cells) per mechanoreceptor" << endl
 <<"rsp_amp		43	# amplitude of response signal" << endl
 <<"rsp_width	1	# width of receptive field of sensors (ie. Merkel Cells) (std, mm)" << endl
 <<"rsp_amp_wn	8.9	# white noise on amplitude response of the sensor" << endl
@@ -89,7 +88,7 @@ psoma_mr << "###############################" << endl
 <<"###############################" << endl
 <<"# Mechanoreceptor Parameters" << endl
 <<"###############################" << endl
-<<"nb_mr		" << n*m << "# number of mechanoreceptors" << endl
+<<"nb_mr		" << (n)*(m) << "# number of mechanoreceptors" << endl
 <<"V_rest		-70	# resting membrane potential (mV)" << endl
 <<"C		0.5	# membrane capacitance (nF)" << endl
 <<"g		25	# membrane passive conductance (nS)" << endl
